@@ -1,0 +1,15 @@
+<div class="header">
+    <div class="header-content">
+        <h3>Vault 115</h3>
+    </div>
+    <div class="header-nav">
+        <a href="index.html" class="nav-item nav-item-selected">Index</a>
+        <a href="games.html" class="nav-item">Games</a>
+        <a href="lore.html" class="nav-item">Lore</a>
+    </div>
+</div>
+<div class="content">
+</div>
+<div class="footer">
+    <a href="about.html">About</a>
+</div>

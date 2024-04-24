@@ -1,0 +1,8 @@
+<h4 style="text-align:center">Game Name</h4>
+<p>Release Date:</p>
+<p>Development Started Date:</p>
+<p>Publisher:</p>
+<p>Developer:</p>
+<p>Copies Sold:</p>
+<p style = "text-align:center; text-decoration:underline">Background</p>
+<p></p>

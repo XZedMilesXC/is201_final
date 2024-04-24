@@ -1,0 +1,26 @@
+.avatar-div{
+    height: 240px;
+    width: 240px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.modal-item {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 214px;
+    width: 296px;
+}
+
+.modal-icon {
+    height: 170px;
+    width: 170px;
+    overflow: hidden;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}

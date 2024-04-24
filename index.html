@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final</title>
+    <!--jquery-->
+    <script src="../assets/jquery/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //carousel
+            const imgs = ["fallout1.png", "fallout2.jpg","fallouttactics.jpg","falloutbos.jpg", "fallout3.png","falloutnv.jpg", "fallout4.jpg","fallout76.jpg"]
+            const imgpaths = []
+            imgs.forEach(addPaths)
+            function addPaths(value) {
+                path = "../assets/imgs/img-rotater/" + value
+                imgpaths.push(path)
+            }
+            i = 1
+            $("#img-replacer").attr("src", imgpaths[0]);
+            $("#forward").on("click", function () {
+                i = index(i, true, imgpaths.length);
+                imgAnimater(imgpaths[i]);
+            });
+            $("#backward").on("click", function () {
+                i = index(i, false, imgpaths.length);
+                imgAnimater(imgpaths[i]);
+            });
+            //backgroundselector
+            // $(".b-link").on("click", function(){
+            //     var id = $(this).attr("href");
+            //     $(id).css("background-color","white");
+            //     setTimeout(function(){
+            //         $(id).css("background-color","inherit")
+            //     },1000);
+            // });
+        });
+
+        function index(num, add, lgth) {
+            if (add == true) {
+                num += 1
+                if (num >= lgth) {
+                    num = 0
+                }
+            } else {
+                num -= 1
+                if (num < 0) {
+                    num = lgth - 1
+                }
+            }
+            return num
+        }
+
+        function imgAnimater(img) {
+            $("#img-replacer").animate({ opacity: "0%" }, 200, function () {
+                $("#img-replacer").attr("src", img);
+                $("#img-replacer").animate({ opacity: "100%" }, 200);
+            });
+        }
+
+        // function imgChanger(num, add){
+        //     var od = "#" + num
+        //     if (add == true){
+        //         num += 1
+        //         if (num > 5) {
+        //             num = 1
+        //         }
+        //     } else {
+        //         num -= 1
+        //         if (num < 1) {
+        //             num = 5
+        //         }
+        //     }
+        //     var nd = "#" + num
+        //     $(od).animate({opacity: "0%"}, function(){
+        //         $(nd).animate({opacity: "0%"});
+        //     });
+        // }
+    </script>
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/layout_styles.css" rel="stylesheet" />
+    <link href="../css/final_page_styles.css" rel="stylesheet" />
+    <!--icons-->
+    <!-- <link href="../assets/fontawesome/css/all.css" rel="stylesheet" /> -->
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-nav">
+            <a href="index.html" class="nav-item">Index</a>
+            <a href="games.html" class="nav-item">Games</a>
+            <a href="lore.html" class="nav-item">Lore</a>
+            <!-- <a href="compendium.html" class="nav-item">Compendium</a> -->
+            <a href="one_screen_final.html" class="nav-item nav-item-selected">Final</a>
+        </div>
+    </div>
+    <div class="content">
+        <!--side nav menu-->
+        <div class="navigator-position">
+            <div class="navigator-box">
+                <div class="navigator-box-title">
+                    <h4>Nav</h4>
+                    <h4>Menu</h4>
+                </div>
+                <div class="navigator-box-content">
+                    <ul>
+                        <li><a class="b-link" href="#lists">Lists</a></li>
+                        <li><a class="b-link" href="#srcs">Assets</a></li>
+                        <li><a class="b-link" href="#table">Table</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Rest of Page-->
+        <h2 style="text-align: center; margin-bottom:10px">Final</h2>
+        <div id="lists" class="row">
+            <h3 class="row-header">Lists</h3>
+            <div style="justify-content: space-around;" class="d-flex">
+                <div class="box box-background-color">
+                    <div class="box-header">
+                        <h6>To-Do</h6>
+                    </div>
+                    <div class="box-content">
+                        <form class="d-flex" style="flex-direction: column;">
+                            <div>
+                                <input id="1" type="checkbox">
+                                <label for="1">Implement open/close icons</label>
+                            </div>
+                            <div>
+                                <input id="2" type="checkbox">
+                                <label for="2">Finalize structure of lore page</label>
+                            </div>
+                            <div>
+                                <input id="3" type="checkbox">
+                                <label for="3">Update colors</label>
+                            </div>
+                            <div>
+                                <input id="4" type="checkbox">
+                                <label for="4">Find new fonts</label>
+                            </div>
+                            <div>
+                                <input id="5" type="checkbox">
+                                <label for="5">Structure compendium</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="box box-background-color">
+                    <div class="box-header">
+                        <h6>Why</h6>
+                    </div>
+                    <div class="box-content">
+                        <ol>
+                            <li>Its for the class, so I had to do it | Womp Womp</li>
+                            <li>I wanted to make a website, so it being the classes final project offered the perfect
+                                opportunity</li>
+                            <ul>
+                                <li>While I wanted to make a website, having to make all the styles makes it take much
+                                    longer</li>
+                                <li>As a counter-point, its fun to make everything from scratch</li>
+                            </ul>
+                            <li>I really like Fallout, and the world that it's built through its 26 years - I'm a bit of
+                                a nerd</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="srcs" class="row">
+            <h3 class="row-header">Assets</h3>
+            <div class="d-flex j-sa">
+                <div class="w-40">
+                    <h4 style="text-align: center;">Title Art</h4>
+                    <div class="rotate-container">
+                        <div id="backward" class="rotater-button left-button"><p style="rotate:180deg">></p></div>
+                        <div class="image-container">
+                            <img id="img-replacer" src="" width="100%" height="100%">
+                        </div>
+                        <div id="forward" class="rotater-button right-button"><p>></p></div>
+                    </div>
+                </div>
+                <div class="w-40">
+                    <h4 style="text-align: center;">Video on Vaults</h4>
+                    <iframe width="560" height="300" src="https://www.youtube.com/embed/8dbWUUf9KKw?si=5Md6CcGRYQh3t-nR"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="table" class="row">
+        <h3 class="row-header">Table</h3>
+        <h4 style="text-align: center;">Revenue and General Reception of the Fallout Games</h4>
+        <div class="d-flex j-c">
+            <div class='tableauPlaceholder' id='viz1713939451903' style='position: relative'><noscript><a href='#'><img
+                            alt='Pip Boy '
+                            src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fa&#47;Fallout_17135560240380&#47;PipBoy&#47;1_rss.png'
+                            style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='Fallout_17135560240380&#47;PipBoy' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image'
+                        value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fa&#47;Fallout_17135560240380&#47;PipBoy&#47;1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                </object></div>
+            <script
+                type='text/javascript'>                    var divElement = document.getElementById('viz1713939451903'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '1364px'; vizElement.style.height = '797px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="/bootstrap/index.html">Bootstrapped styled page</a>
+    </div>
+</body>
+
+</html>
