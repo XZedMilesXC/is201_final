@@ -12,7 +12,7 @@ body{
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: rgb(253, 253, 210);
+    background: rgb(255, 255, 255);
   }
   
   /* Handle */
